@@ -16,8 +16,9 @@ jobs:
       - name: hello
         shell: bash
         env:
-          NAME: "World"
-          GREETINGS_WORD: "Hello"
-          EXCLAMATION_POINT: "!"
+          SOURCE_FOLDER: cmd
+          SOURCE_FILE_NAME: main.go
+          OUTPUT_FILE_NAME: main
+          DST_PATH: bin/
         run: |
-          make hello
+          make build

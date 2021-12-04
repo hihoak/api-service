@@ -11,6 +11,8 @@ jobs:
         go-version: [1.17.x]
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
       - name: hello
         shell: bash
         env:
@@ -18,6 +20,4 @@ jobs:
           GREETINGS_WORD: "Hello"
           EXCLAMATION_POINT: "!"
         run: |
-          pwd
-          ls -la
           make hello

@@ -1,5 +1,5 @@
 EXPECTED_GO_VERSION:=1.17
-GO_VERSION_SHORT:=$(shell echo `go version` | pcregrep -o1 -e "go(([0-9]+\.*?){2,}?)")
+GO_VERSION_SHORT:=$(shell echo `go version` | grep -E "go(([0-9]+\.*?){2,})")
 ifneq ($(EXPECTED_GO_VERSION), $(GO_VERSION_SHORT))
 $(error Not valid go version. You have 'go$(GO_VERSION_SHORT)'. Expect 'go$(EXPECTED_GO_VERSION)')
 endif

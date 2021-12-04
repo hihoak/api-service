@@ -17,4 +17,4 @@ jobs:
           GREETINGS_WORD: "Hello"
           EXCLAMATION_POINT: "!"
         run: |
-          echo "'${GREETINGS_WORD}', '${NAME}''${EXCLAMATION_POINT}'"
+          make hello

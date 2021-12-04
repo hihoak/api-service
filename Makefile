@@ -1,5 +1,5 @@
 EXPECTED_GO_VERSION:=go1.17
-GO_VERSION_SHORT:=$(shell echo `go version` | egrep -o "go(([0-9]+\.*?){2,})")
+GO_VERSION_SHORT:=$(shell echo `go version` | egrep -o "go(([0-9]+\.*?){2})")
 ifneq ($(EXPECTED_GO_VERSION), $(GO_VERSION_SHORT))
 $(error Not valid go version. You have '$(GO_VERSION_SHORT)'. Expect '$(EXPECTED_GO_VERSION)')
 endif

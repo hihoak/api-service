@@ -11,9 +11,7 @@ hello:
 
 .PHONY: build
 build:
-	export SOURCE_PATH="${SOURCE_FOLDER}/${SOURCE_FILE_NAME}" \
-	export OUTPUT_PATH="${DST_PATH}/${OUTPUT_FILE_NAME}" \
-	go build -v -o ${OUTPUT_PATH} ${SOURCE_PATH}
+	go build -o bin/ -v cmd/main.go
 
 help:
 	@echo "hello - prints greetings with args GREETINGS_WORD, NAME and EXCLAMATION_POINT"

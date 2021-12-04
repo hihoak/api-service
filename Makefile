@@ -1,7 +1,7 @@
-EXPECTED_GO_VERSION:=1.17
-GO_VERSION_SHORT:=$(shell echo `go version` | grep -E "go(([0-9]+\.*?){2,})")
+EXPECTED_GO_VERSION:=go1.17
+GO_VERSION_SHORT:=$(shell echo `go version` | grep -Eo "go(([0-9]+\.*?){2,})")
 ifneq ($(EXPECTED_GO_VERSION), $(GO_VERSION_SHORT))
-$(error Not valid go version. You have 'go$(GO_VERSION_SHORT)'. Expect 'go$(EXPECTED_GO_VERSION)')
+$(error Not valid go version. You have '$(GO_VERSION_SHORT)'. Expect '$(EXPECTED_GO_VERSION)')
 endif
 
 .PHONY: hello

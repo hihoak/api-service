@@ -12,9 +12,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: hello
+        shell: bash
         env:
           NAME: "World"
           GREETINGS_WORD: "Hello"
           EXCLAMATION_POINT: "!"
         run: |
+          pwd
+          ls -la
           make hello

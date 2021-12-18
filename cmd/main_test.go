@@ -9,7 +9,7 @@ import (
 func TestGetString(t *testing.T) {
 	t.Parallel()
 	got := getString()
-	expect := "Hello, World!"
+	expect := greetingsMessage
 
 	if ! gomock.Eq(got).Matches(expect) {
 		t.Errorf("Got %v, expect %v", got, expect)

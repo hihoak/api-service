@@ -4,8 +4,10 @@ import (
 	"github.com/fatih/color"
 )
 
+const greetingsMessage = "Hello, World!"
+
 func getString() string {
-	return "Hello, World!"
+	return greetingsMessage
 }
 
 func main() {

@@ -13,5 +13,9 @@ hello:
 build:
 	go build -o bin/ -v cmd/main.go
 
+.PHONY: tests
+tests:
+	go test -v -race -parallel 8 -coverprofile out.txt ./...
+
 help:
 	@echo "hello - prints greetings with args GREETINGS_WORD, NAME and EXCLAMATION_POINT"

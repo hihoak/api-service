@@ -17,5 +17,9 @@ build:
 tests:
 	go test -v -race -parallel 8 -coverprofile out.txt ./...
 
+.PHONY: super-linter
+super-linter:
+	docker run -e RUN_LOCAL=true -e DEFAULT_WORKSPACE=/Users/artemikhaylov/workspace/pet-project/api-service -v /Users/artemikhaylov/workspace/pet-project/api-service github/super-linter
+
 help:
 	@echo "hello - prints greetings with args GREETINGS_WORD, NAME and EXCLAMATION_POINT"

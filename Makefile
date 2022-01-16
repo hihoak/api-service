@@ -17,6 +17,14 @@ build:
 tests:
 	go test -v -race -parallel 8 -coverprofile out.txt ./...
 
+.PHONY: generate-pb
+generate-pb:
+	protoc --proto_path=protos protos/hihoak/music_api/v1/*.proto --go_out=plugins=grpc:pkg/pb
+
+.PHONY: remove-pb
+remove-pb:
+	rm -rf pkg/pb/*
+
 .PHONY: super-linter
 super-linter:
 	docker run -e RUN_LOCAL=true -e DEFAULT_WORKSPACE=/Users/artemikhaylov/workspace/pet-project/api-service -v /Users/artemikhaylov/workspace/pet-project/api-service github/super-linter

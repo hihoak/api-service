@@ -9,7 +9,7 @@ import (
 
 type LoggerKeyType uint8
 
-const LoggerKey = 1
+const LoggerKey LoggerKeyType = 1
 
 type Logger struct {
 	logger *zerolog.Logger

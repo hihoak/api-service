@@ -1,0 +1,4 @@
+spotify:
+  redirect_uri: "http://localhost:8080/hello"
+  client_id: "your-client-id-here"
+  client_secret: "your-secret-here"
